@@ -1,8 +1,8 @@
-admins = new Map()
+let admins = new Map()
 
-players = new Map()
+let players = new Map()
 
-registerUser(username, password, admin) {
+const registerUser = function(username, password, admin) {
 	if (admin) {
 		if (!admin.hasKey(username)) {
 			admin.set(username, new User(username, password, true))
