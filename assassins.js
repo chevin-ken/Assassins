@@ -2,10 +2,10 @@ let admins = new Map()
 
 let players = new Map()
 
-const registerUser = function(username, password, admin) {
+const registerUser = function(name, username, password, admin) {
 	if (admin) {
 		if (!admin.hasKey(username)) {
-			admin.set(username, new User(username, password, true))
+			admin.set(username, new User(name, username, password, true))
 		}
 		else {
 			return "Username Taken"
@@ -13,7 +13,7 @@ const registerUser = function(username, password, admin) {
 	}
 	else {
 		if (!players.hasKey(username)) {
-			players.set(username, new User(username, password, false))
+			players.set(username, new User(name, username, password, false))
 		}
 		else {
 			return "Username Taken"
